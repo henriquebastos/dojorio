@@ -30,7 +30,7 @@ class DiamondLine(DiamondBase):
         number_of_spaces = self.ordinal * 2 - 1
         if self.ordinal == 0:
             return "A"
-        return "%s%s%s" % (self.char, number_of_spaces * ' ', self.char)
+        return f"{self.char}{number_of_spaces * ' '}{self.char}"
 
         
         

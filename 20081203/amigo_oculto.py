@@ -6,11 +6,6 @@ class AmigoOculto:
         
         
         pulo = randint(1,2)
-        
-        sorteados = amigos[pulo:] + amigos[:pulo]
-        
-        
-        
-        
-        return sorteados
+
+        return amigos[pulo:] + amigos[:pulo]
 

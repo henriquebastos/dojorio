@@ -3,10 +3,7 @@ class Agenda:
 	eventos = []
 	
 	def colide(self, outra_agenda):		
-		if len(self.eventos) > 0:
-			return True
-		else:
-			return False
+		return len(self.eventos) > 0
 			
 		
 	def adicionar(self, evento):

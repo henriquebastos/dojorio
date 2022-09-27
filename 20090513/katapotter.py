@@ -19,7 +19,7 @@ class BookCharger(object):
         number_of_different_books = len(set(chart.books))
         rate = rates.get(number_of_different_books, 0)
         self.price = book_price * rate * number_of_different_books
-        
+
         if number_of_different_books < len(chart.books):
             self.price += 42
         

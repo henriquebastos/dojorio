@@ -1,10 +1,10 @@
 def start_matrix(col, row):
-    matrix = list()
+    matrix = []
     for c in range(col):
-        matrix.append(list())
-        for r in range(row):
+        matrix.append([])
+        for _ in range(row):
             matrix[c].append(0) 
-            
+
     return matrix
     
 def coloca_bomba(matriz, lin, col):

@@ -7,10 +7,7 @@ class TestMiner(unittest.TestCase):
 		col = 7
 		row = 1
 		field = miner.start_matrix(col, row)
-		cells = 0
-		for i in field:
-			cells += 1
-				
+		cells = sum(1 for _ in field)
 		self.assertEqual(cells, col)
 
 	
@@ -18,10 +15,7 @@ class TestMiner(unittest.TestCase):
 		col = 1
 		row = 8
 		field = miner.start_matrix(col, row)
-		cells = 0
-		for i in field[0]:
-			cells += 1
-				
+		cells = sum(1 for _ in field[0])
 		self.assertEqual(cells, row)
 	
 	def test_empty_field(self):
@@ -32,7 +26,7 @@ class TestMiner(unittest.TestCase):
 		for linha in field:
 			for celula in linha:
 				soma += celula
-				
+
 		self.assertEqual(soma, 0)
 		
 	def test_assert_bomb(self):
@@ -40,7 +34,7 @@ class TestMiner(unittest.TestCase):
 		row = 8
 		field = miner.start_matrix(col, row)
 		miner.coloca_bomba(field, 3,7)
-		
+
 		self.assertEqual(field[3][7], -1) 
 		
 	def test_assert_near_bomb(self):
@@ -48,7 +42,7 @@ class TestMiner(unittest.TestCase):
 		row = 1
 		field = miner.start_matrix(col, row)
 		field = miner.coloca_bomba(field, 0, 0)
-		
+
 		computed_field = miner.compute_field(field)
 		self.assertEqual(computed_field, field)
 		
@@ -57,7 +51,7 @@ class TestMiner(unittest.TestCase):
 		row = 2
 		field = miner.start_matrix(col, row)
 		field = miner.coloca_bomba(field, 0, 0)
-		
+
 		computed_field = miner.compute_field(field)
 		self.assertEqual(computed_field, [[-1, 1], [1, 1]])
 		

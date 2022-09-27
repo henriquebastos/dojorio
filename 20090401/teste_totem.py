@@ -20,7 +20,7 @@ class TesteTotem(unittest.TestCase):
         totem = dedent("""\
                         _|
                         _|""")
-                
+
         parte = "|"
         coordenadas = achar_assinatura(totem, parte)
         self.assertEqual(coordenadas, [(0, 1),(1, 1)])
