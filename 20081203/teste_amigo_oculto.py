@@ -18,13 +18,13 @@ class TesteAmigoOculto(unittest.TestCase):
     def testeVariasPessoas(self):
         amigos = ["Lucas Teixeira", "Raphael Almeida","Waldir Monteiro", "Edino Moniz"]
         sorteados1 = AmigoOculto().sortear(amigos)
-        
+
         passou = False
-        for i in range (100):
+        for _ in range (100):
             sorteados2 = AmigoOculto().sortear(amigos)
             if sorteados2 != sorteados1:
                 passou = True
-            
+
         self.assertTrue(passou)
                                 
 unittest.main()

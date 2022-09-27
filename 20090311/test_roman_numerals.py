@@ -6,25 +6,25 @@ class TestRomanNumerals(unittest.TestCase):
     def test_1(self):
         input = 1
         output = "I"
-        
+
         self.assertEqual(decimal_to_roman(input), output)
     
     def test_2(self):
         input = 2
         output = "II"
-        
+
         self.assertEqual(decimal_to_roman(input), output)
     
     def test_4(self):
         input = 4
         output = "IV"
-        
+
         self.assertEqual(decimal_to_roman(input), output)
         
     def test_5(self):
         input = 5
         output = "V"
-        
+
         self.assertEqual(decimal_to_roman(input), output)
         
     def test_6_8(self):
@@ -36,7 +36,7 @@ class TestRomanNumerals(unittest.TestCase):
     def test_9(self):
         input = 9
         output = "IX"
-        
+
         self.assertEqual(decimal_to_roman(input), output)
     
     def test_10_13(self):

@@ -10,19 +10,16 @@ class TesteMiner(unittest.TestCase):
         matrix = miner.start_matrix(col, row)
         cells = 0
         for i in matrix:
-            for j in i:
+            for _ in i:
                 cells += 1
-                
+
         self.assertEqual(cells, col * row)
     
     def teste_col_only_matrix(self):
         col = 7
         row = 1
         matrix = miner.start_matrix(col, row)
-        cells = 0
-        for i in matrix:
-            cells += 1
-                
+        cells = sum(1 for _ in matrix)
         self.assertEqual(cells, col)
 
     
@@ -30,10 +27,7 @@ class TesteMiner(unittest.TestCase):
         col = 1
         row = 8
         matrix = miner.start_matrix(col, row)
-        cells = 0
-        for i in matrix[0]:
-            cells += 1
-                
+        cells = sum(1 for _ in matrix[0])
         self.assertEqual(cells, row)
         
     def teste_empty_matrix(self):
@@ -44,7 +38,7 @@ class TesteMiner(unittest.TestCase):
         for linha in matrix:
             for celula in linha:
                 soma += celula
-                
+
         self.assertEqual(soma, 0)
         
     def teste_verificar_bomba(self):
@@ -52,7 +46,7 @@ class TesteMiner(unittest.TestCase):
         row = 8
         matrix = miner.start_matrix(col, row)
         miner.coloca_bomba(matrix, 3,7)
-        
+
         self.assertEqual(matrix[3][7], -1) 
         
     def teste_verificar_vizinhanca(self):
@@ -61,8 +55,8 @@ class TesteMiner(unittest.TestCase):
         matrix = miner.start_matrix(col, row)
         matrix = miner.coloca_bomba(matrix, 1,1)
         matrix = miner.define_valor(matrix, 0,0)
-        
-        
+
+
         self.assertEqual(matrix[0][0], 1)
     
         

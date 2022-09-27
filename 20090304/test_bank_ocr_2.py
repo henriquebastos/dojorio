@@ -127,7 +127,7 @@ class TestBankOcr(unittest.TestCase):
   |  |  |  |  |  |  |  |  |
   |  |  |  |  |  |  |  |  |
 """
-  
+
         result = """\
 000000000
 111111111"""
@@ -177,7 +177,7 @@ class TestParseMultipleAccounts(unittest.TestCase):
 000000051
 49006771? ILL
 000000057 ERR"""
-        
+
         self.assertEqual(ocr(accounts, validate=True), result)
  
 if __name__ == '__main__':

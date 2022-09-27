@@ -1,16 +1,17 @@
 def solve(field):
     
-    if len(field) != 6 :
+    if len(field) != 6:
         return field.replace('.', str(field.count('*')))
-    else:
-        solved_field = ''
-        offset = len(field.split('\n')[0])
-        for index, cell in enumerate(field):
-            if cell == '*':
-                solved_field += '*'
-            else:
-                solved_field += str( count_neighbors(index, field) + count_neighbors(index-offset, field) ) #+ count_neighbors(index+offset, field) )
-        return solved_field
+    offset = len(field.split('\n')[0])
+    return ''.join(
+        '*'
+        if cell == '*'
+        else str(
+            count_neighbors(index, field)
+            + count_neighbors(index - offset, field)
+        )
+        for index, cell in enumerate(field)
+    )
 
 def count_neighbors(index, field):
     begin = max(index - 1, 0)

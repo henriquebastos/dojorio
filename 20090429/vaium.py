@@ -2,13 +2,10 @@ def soma(a,b):
 	return a+b
 
 def verificaSoma(a,b):
-	if a+b > 9:
-		return True
-	return False
+	return a+b > 9
 	
 def contaDigito(a):	
-	numero_de_digitos = len(str(abs(a)))
-	return numero_de_digitos
+	return len(str(abs(a)))
 	
 def NumeroParaArray(a):
 	b = list(str(abs(a)))

@@ -1,20 +1,18 @@
 def ocr(entrada):
     digitos = split_digitos(entrada)
-    saida = ""
-    for digito in digitos:
-        saida += ocr_digito(digito)
+    saida = "".join(ocr_digito(digito) for digito in digitos)
     return int(saida)
 
 def split_digitos(digitos):
     linhas = digitos.split('\n')
     numero_caracteres = len(linhas[0])
 
-    saida = []
-    for i in range(0, numero_caracteres, 3):
-        saida.append("\n".join([linhas[0][i:i+3],
-                                linhas[1][i:i+3],
-                                linhas[2][i:i+3]]))
-    return saida 
+    return [
+        "\n".join(
+            [linhas[0][i : i + 3], linhas[1][i : i + 3], linhas[2][i : i + 3]]
+        )
+        for i in range(0, numero_caracteres, 3)
+    ] 
     
 def ocr_digito(entrada):
     table = {'''\

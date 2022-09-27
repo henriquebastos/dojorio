@@ -1,15 +1,11 @@
 def pegarPrimeiroDigito(entrada):
     linhas = entrada.split('\n')
-    digito = []
-    for linha in linhas:
-        digito.append(linha[:3])
+    digito = [linha[:3] for linha in linhas]
     return '\n'.join(digito)
 
 def pegarSegundoDigito(entrada):
     linhas = entrada.split('\n')
-    digito = []
-    for linha in linhas:
-        digito.append(linha[3:])
+    digito = [linha[3:] for linha in linhas]
     return '\n'.join(digito)
     
 def conversor(entrada):

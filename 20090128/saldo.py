@@ -7,8 +7,5 @@ class Partida(tuple):
 
 class Partidas(list):
     def melhor_saldo(self):
-        if self[0].vitoria:
-            return (1, 1)
-        else:
-            return "nenhum"
+        return (1, 1) if self[0].vitoria else "nenhum"
     

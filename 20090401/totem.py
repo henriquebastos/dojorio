@@ -1,9 +1,6 @@
 def achar_assinatura(totem, parte):
     if len(totem) == len(parte):
-        if totem == parte:
-            return [(0,0)]
-        else:
-            return []
+        return [(0,0)] if totem == parte else []
     elif len(totem) < len(parte):
         return []
     else:
